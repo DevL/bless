@@ -1,6 +1,8 @@
 # Bliss
 
-TODO: Write a gem description
+Miss Perl? Ever wished Ruby was more like it? Me neither, but that's no excuse for going nuts and hack together some insane code that Perlifies Ruby.
+
+There's no excuse for using it in production though.
 
 ## Installation
 
@@ -19,6 +21,11 @@ Or install it yourself as:
 ## Usage
 
 TODO: Write usage instructions here
+
+```
+  my $blessed_object = bless Object.new, String
+  blessed_object.instance_of?(String) # => true
+```
 
 ## Contributing
 

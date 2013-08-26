@@ -11,7 +11,11 @@ module Bliss
     end
 
     def bless
-      set_class
+      if blessee_writeable?
+        convert_or_set_blessee_in_context
+      else
+        convert_or_instantiate
+      end
     end
 
     private
@@ -22,7 +26,7 @@ module Bliss
       @object = object
       @context = context
       @invoker = invoker
-      @klass = klass || context.eval('self.class')
+      @klass = determine_target_class(klass)
       @code = code_for_invoker
       @blessee_code = extract_blessee_code
       @blessee, @blessee_owner = blessee_and_owner
@@ -34,22 +38,28 @@ module Bliss
       raise CannotBlessSimpletons.new
     end
 
+    def determine_target_class(klass)
+      klass || context.eval('self.class')
+    end
+
     def code_for_invoker
       file, line = invoker.split(':')
       IO.readlines(file)[line.to_i - 1].strip
     end
 
     def extract_blessee_code
-      match_data = code.match regex_for_code
+      match_data = code.match code_regex
       match_data[:var] if match_data
     end
 
-    def regex_for_code
-      if code.include?(',')
-        /bless(\(\s*|\s+)(?<var>\S+)\s*,\s*.+\)?/
-      else
-        /bless(\(\s*|\s+)(?<var>\S+)\)?/
-      end
+    def code_regex
+      /
+        bless
+        (\(\s*|\s+)     # optional opening parens followed by optional whitespace OR mandatory whitespace
+        (?<var>[^,\s]+) # extract variable name
+        (\s*,\s*.+)?    # optional whitespace, comma, optional whitespace, whatever (all optional)
+        \)?             # optional closing parens
+      /x
     end
 
     def blessee_and_owner
@@ -57,24 +67,16 @@ module Bliss
       [blessee_elements.pop, blessee_elements.join('.')]
     end
 
-    def set_class
-      if blessee_writeable?
-        if convertable_object?
-          convert_blessee_in_context
-        else
-          set_blessee_in_context
-        end
-      else
-        if convertable_object?
-          send(klass.name, object)
-        else
-          klass.new
-        end
-      end
-    end
-
     def convertable_object?
       Kernel.methods.include?(klass.name.to_sym)
+    end
+
+    def convert_or_set_blessee_in_context
+      if convertable_object?
+        convert_blessee_in_context
+      else
+        set_blessee_in_context
+      end
     end
 
     def convert_blessee_in_context
@@ -83,6 +85,14 @@ module Bliss
 
     def set_blessee_in_context
       context.eval("#{blessee_code} = #{klass}.new")
+    end
+
+    def convert_or_instantiate
+      if convertable_object?
+        send(klass.name, object)
+      else
+        klass.new
+      end
     end
 
     def blessee_writeable?

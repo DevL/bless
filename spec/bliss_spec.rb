@@ -60,6 +60,14 @@ describe 'Kernel#bless' do
     some_object.should == expected
   end
 
+  it 'handles parens' do
+    some_object = { a: 1 }
+    expected = [[:a, 1]]
+    bless(some_object, Array)
+
+    some_object.should == expected
+  end
+
   class VeryBasic < BasicObject
     def bless_me(klass)
       ::Kernel.bless self, klass

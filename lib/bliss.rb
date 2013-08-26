@@ -46,9 +46,9 @@ module Bliss
 
     def regex_for_code
       if code.include?(',')
-        /bless\s+(?<var>\S+)\s*,\s*.+/
+        /bless(\(\s*|\s+)(?<var>\S+)\s*,\s*.+\)?/
       else
-        /bless\s+(?<var>\S+)/
+        /bless(\(\s*|\s+)(?<var>\S+)\)?/
       end
     end
 

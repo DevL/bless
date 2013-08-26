@@ -72,12 +72,3 @@ describe 'Kernel#bless' do
     }.to raise_error(Bliss::Blesser::CannotBlessSimpletons)
   end
 end
-
-#describe 'Kernel.my' do
-#  it 'unsets the global variable'
-#
-#  it 'sets a local variable with the same name as the global variable'
-#
-#  it 'handles multiple variables'
-#
-#end

@@ -16,7 +16,7 @@ module Bliss
 
     private
 
-    attr_reader :blessee, :blessee_code, :blessee_owner, :code, :context, :invoker, :klass
+    attr_reader :blessee, :blessee_code, :blessee_owner, :code, :context, :invoker, :klass, :object
 
     def initialize(object, klass, context, invoker)
       @object = object

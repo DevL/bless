@@ -20,17 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Using bless is simplicity itself. Or was it idiocy? Nevermind, bless your followers by uttering the following. Preferably followed by a prayer that your code will not be seen by anyone. Ever.
 
 ```
-  my $blessed_object = bless Object.new, String
+  blessed_object = bless(Object.new, String)
   blessed_object.instance_of?(String) # => true
 ```
+
+Now, the proverbial example usage of bless in Perl would operate in conjunction with the `my` keyword. However, implementing support for that proved to be somewhat less than straightforward. To make a long story short, setting a local variable from an eval AND retaining that local variable beyond the scope of the eval is simply not possible in Ruby\*.
+
+\* Until we come up with the idea of hacking Rubinius into submission.
 
 ## Contributing
 
 1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
+2. Create your feature branch (`git checkout -b I-say-we-take-off-and-nuke-it-from-orbit`)
+3. Commit your changes (`git commit -am 'It is the only way to make sure!'`)
+4. Push to the branch (`git push origin I-say-we-take-off-and-nuke-it-from-orbit`)
 5. Create new Pull Request

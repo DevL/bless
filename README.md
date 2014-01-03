@@ -1,4 +1,4 @@
-# Bliss [![Build Status](https://secure.travis-ci.org/DevL/bliss.png)](http://travis-ci.org/DevL/bliss) ![Gem version](https://badge.fury.io/rb/bliss.png)
+# Bless [![Build Status](https://secure.travis-ci.org/DevL/bless.png)](http://travis-ci.org/DevL/bless) ![Gem version](https://badge.fury.io/rb/bless.png)
 
 Miss Perl? Ever wished Ruby was more like it? Me neither, but that's no excuse for going nuts and hack together some insane code that Perlifies Ruby.
 
@@ -8,7 +8,7 @@ There's no excuse for using it in production though.
 
 Add this line to your application's Gemfile:
 
-    gem 'bliss'
+    gem 'bless'
 
 And then execute:
 
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install bliss
+    $ gem install bless
 
 ## Usage
 

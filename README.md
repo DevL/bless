@@ -1,4 +1,4 @@
-# Bliss
+# Bliss [![Build Status](https://secure.travis-ci.org/DevL/bliss.png)](http://travis-ci.org/DevL/bliss) ![Gem version](https://badge.fury.io/rb/bliss.png)
 
 Miss Perl? Ever wished Ruby was more like it? Me neither, but that's no excuse for going nuts and hack together some insane code that Perlifies Ruby.
 
@@ -22,14 +22,14 @@ Or install it yourself as:
 
 Using bless is simplicity itself. Or was it idiocy? Nevermind, bless your followers by uttering the following. Preferably followed by a prayer that your code will not be seen by anyone. Ever.
 
-```
+```ruby
   blessed_object = bless(Object.new, String)
   blessed_object.instance_of?(String) # => true
 ```
 
 Now, the proverbial example usage of bless in Perl would operate in conjunction with the `my` keyword. However, implementing support for that proved to be somewhat less than straightforward. To make a long story short, setting a local variable from an eval AND retaining that local variable beyond the scope of the eval is simply not possible in Ruby\*.
 
-\* Until we come up with the idea of hacking Rubinius into submission.
+\* Until we come up with the idea of hacking Rubinius into submission. Hopefully we'll never think of that.
 
 ## Contributing
 

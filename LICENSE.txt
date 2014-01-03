@@ -1,4 +1,4 @@
-Copyright (c) 2013 Lennart Fridén
+Copyright (c) 2013-2014 Lennart Fridén and Kim Persson
 
 MIT License
 

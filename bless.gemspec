@@ -1,16 +1,16 @@
 # encoding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'bliss/version'
+require 'bless/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'bliss'
-  spec.version       = Bliss::VERSION
+  spec.name          = 'bless'
+  spec.version       = Bless::VERSION
   spec.authors       = ['Lennart Fridén', 'Kim Persson']
   spec.email         = ['lennart@devl.se']
   spec.description   = %q{Blessed are the Perl hackers}
   spec.summary       = %q{Brings the blessings of Perl to Ruby}
-  spec.homepage      = 'https://github.com/DevL/bliss'
+  spec.homepage      = 'https://github.com/DevL/bless'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)

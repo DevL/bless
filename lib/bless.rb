@@ -1,7 +1,7 @@
-require 'bliss/version'
+require 'bless/version'
 require 'binding_of_caller'
 
-module Bliss
+module Bless
   class Blesser
     class CannotBlessSimpletons < StandardError; end
 
@@ -118,6 +118,6 @@ module Kernel
     context = binding.of_caller(1)
     invoker = caller.first
 
-    Bliss::Blesser.bless(object, klass, context, invoker)
+    Bless::Blesser.bless(object, klass, context, invoker)
   end
 end

@@ -1,4 +1,4 @@
-require 'bliss'
+require 'bless'
 
 class SomePackage
 end
@@ -77,6 +77,6 @@ describe 'Kernel#bless' do
   it 'gracefully handles BasicObjects' do
     expect {
       VeryBasic.new.bless_me(Hash)
-    }.to raise_error(Bliss::Blesser::CannotBlessSimpletons)
+    }.to raise_error(Bless::Blesser::CannotBlessSimpletons)
   end
 end

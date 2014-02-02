@@ -1,4 +1,4 @@
-# Bless [![Build Status](https://secure.travis-ci.org/DevL/bless.png)](http://travis-ci.org/DevL/bless) ![Gem version](https://badge.fury.io/rb/bless.png)
+# Bless [![Build Status](https://secure.travis-ci.org/DevL/bless.png)](http://travis-ci.org/DevL/bless) [![Code Climate](https://codeclimate.com/github/DevL/bless.png)](https://codeclimate.com/github/DevL/bless) ![Gem version](https://badge.fury.io/rb/bless.png) 
 
 Miss Perl? Ever wished Ruby was more like it? Me neither, but that's no excuse for going nuts and hack together some insane code that Perlifies Ruby.
 

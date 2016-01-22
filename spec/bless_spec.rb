@@ -33,7 +33,7 @@ describe 'Kernel#bless' do
     some_object = bless Object.new
     expected_class = self.class
     # the matcher 'be_an_instance_of' uses the 'describe' description
-    some_object.instance_of?(expected_class).should be_true
+    some_object.instance_of?(expected_class).should be true
   end
 
   it 'changes the reference to the object without requiring assignment' do
@@ -49,7 +49,7 @@ describe 'Kernel#bless' do
     expected_class = self.class
     bless some_object
 
-    some_object.instance_of?(expected_class).should be_true
+    some_object.instance_of?(expected_class).should be true
   end
 
   it 'attempts to convert the object if possible' do
